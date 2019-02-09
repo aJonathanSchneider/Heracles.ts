@@ -1,0 +1,429 @@
+{
+	"@context": {
+			"@vocab": "http://schema.org/",
+			"rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+	},
+	"@id": "/api/ysj/hydra/apiDocumentation",
+	"@language": "en",
+	"@type": "http://www.w3.org/ns/hydra/core#ApiDocumentation",
+	"http://www.w3.org/ns/hydra/core#entrypoint": [
+			{
+					"@id": "/api/ysj/hydra/",
+					"@language": "en",
+					"@type": "rdfs:Class"
+			}
+	],
+	"http://www.w3.org/ns/hydra/core#supportedClass": [
+			{
+					"@id": "/api/ysj/hydra/ActionableProductInfo",
+					"@language": "en",
+					"@type": [
+							"http://schema.org/Product",
+							"http://www.w3.org/ns/hydra/core#Class"
+					],
+					"http://www.w3.org/ns/hydra/core#title": [
+							"a schema.org/Product, accessible with hydra"
+					],
+					"http://www.w3.org/ns/hydra/core#SupportedProperty": [
+							{
+									"@id": "/ysj/pools/values/actionableoffers",
+									"@language": "en",
+									"@type": "/api/ysj/hydra/OfferInfoCollection",
+									"http://www.w3.org/ns/hydra/core#property": [
+											{
+													"@id": "http://schema.org/offers",
+													"@language": "en",
+													"@type": "http://www.w3.org/2000/01/rdf-schema#Property"
+											}
+									]
+							}
+					],
+					"http://www.w3.org/ns/hydra/core#supportedOperation": [
+							{
+									"@id": "/ysj/pools/values/productinfo_replace",
+									"@language": "en",
+									"@type": "/ysj/pools/values/HydraUpdateAction",
+									"http://www.w3.org/ns/hydra/core#expects": [
+											{
+													"@id": "http://schema.org/Product",
+													"@language": "en",
+													"@type": "http://schema.org/Thing"
+											}
+									],
+									"http://www.w3.org/ns/hydra/core#method": [
+											"PUT"
+									],
+									"http://www.w3.org/ns/hydra/core#description": [
+											"Replaces an existing Product entity"
+									],
+									"http://www.w3.org/ns/hydra/core#returns": [
+											{
+													"@id": "http://schema.org/Product",
+													"@language": "en",
+													"@type": "http://schema.org/Thing"
+											}
+									]
+							},
+							{
+									"@id": "/ysj/pools/values/productinfo_delete",
+									"@language": "en",
+									"@type": "/ysj/pools/values/HydraDeleteAction",
+									"http://www.w3.org/ns/hydra/core#description": [
+											"Deletes a Product entity"
+									],
+									"http://www.w3.org/ns/hydra/core#method": [
+											"DELETE"
+									]
+							},
+							{
+									"@id": "/ysj/pools/values/productinfo_read",
+									"@language": "en",
+									"@type": "/ysj/pools/values/HydraReadAction",
+									"http://www.w3.org/ns/hydra/core#description": [
+											"Retrieves a Product entity"
+									],
+									"http://www.w3.org/ns/hydra/core#returns": [
+											{
+													"@id": "http://schema.org/Product",
+													"@language": "en",
+													"@type": "http://schema.org/Thing"
+											}
+									],
+									"http://www.w3.org/ns/hydra/core#method": [
+											"GET"
+									]
+							}
+					]
+			},
+			{
+					"@id": "/ysj/pools/values/HydraAddAction",
+					"@language": "en",
+					"@type": [
+							"http://schema.org/AddAction",
+							"http://www.w3.org/ns/hydra/core#supportedOperation"
+					]
+			},
+			{
+					"@id": "http://schema.org/Product",
+					"@language": "en",
+					"@type": "http://schema.org/Thing"
+			},
+			{
+					"@id": "/api/ysj/hydra/ActionableOfferInfo",
+					"@language": "en",
+					"@type": [
+							"http://schema.org/Offer",
+							"http://www.w3.org/ns/hydra/core#Class"
+					],
+					"http://www.w3.org/ns/hydra/core#title": [
+							"a schema.org/Offer, accessible with hydra"
+					],
+					"http://www.w3.org/ns/hydra/core#supportedOperation": [
+							{
+									"@id": "/ysj/pools/values/offerinfo_read",
+									"@language": "en",
+									"@type": "/ysj/pools/values/HydraReadAction",
+									"http://www.w3.org/ns/hydra/core#method": [
+											"GET"
+									],
+									"http://www.w3.org/ns/hydra/core#description": [
+											"Retrieves an Offer entity"
+									],
+									"http://www.w3.org/ns/hydra/core#returns": [
+											{
+													"@id": "http://schema.org/Offer",
+													"@language": "en",
+													"@type": "http://schema.org/Intangible"
+											}
+									]
+							},
+							{
+									"@id": "/ysj/pools/values/offerinfo_replace",
+									"@language": "en",
+									"@type": "/ysj/pools/values/HydraUpdateAction",
+									"http://www.w3.org/ns/hydra/core#expects": [
+											{
+													"@id": "http://schema.org/Offer",
+													"@language": "en",
+													"@type": "http://schema.org/Intangible"
+											}
+									],
+									"http://www.w3.org/ns/hydra/core#description": [
+											"Replaces an existing Offer entity"
+									],
+									"http://www.w3.org/ns/hydra/core#method": [
+											"PUT"
+									],
+									"http://www.w3.org/ns/hydra/core#returns": [
+											{
+													"@id": "http://schema.org/Offer",
+													"@language": "en",
+													"@type": "http://schema.org/Intangible"
+											}
+									]
+							},
+							{
+									"@id": "/ysj/pools/values/offerinfo_delete",
+									"@language": "en",
+									"@type": "/ysj/pools/values/HydraDeleteAction",
+									"http://www.w3.org/ns/hydra/core#method": [
+											"DELETE"
+									],
+									"http://www.w3.org/ns/hydra/core#description": [
+											"Deletes a Offer entity"
+									]
+							}
+					]
+			},
+			{
+					"@id": "/api/ysj/hydra/OfferInfoCollection",
+					"@language": "en",
+					"@type": "http://www.w3.org/ns/hydra/core#Collection",
+					"http://www.w3.org/ns/hydra/core#SupportedProperty": [
+							{
+									"@id": "/ysj/pools/values/offerinfos_member",
+									"@language": "en",
+									"@type": "/api/ysj/hydra/ActionableOfferInfo",
+									"http://www.w3.org/ns/hydra/core#writeable": [
+											false
+									],
+									"http://www.w3.org/ns/hydra/core#title": [
+											"members"
+									],
+									"http://www.w3.org/ns/hydra/core#readable": [
+											false
+									],
+									"http://www.w3.org/ns/hydra/core#property": [
+											{
+													"@id": "http://www.w3.org/ns/hydra/core#member",
+													"@language": "en",
+													"@type": "http://www.w3.org/2000/01/rdf-schema#Property"
+											}
+									],
+									"http://www.w3.org/ns/hydra/core#description": [
+											"The offer infos"
+									]
+							}
+					],
+					"http://www.w3.org/ns/hydra/core#title": [
+							"Collection of all Offer infos"
+					],
+					"http://www.w3.org/ns/hydra/core#supportedOperation": [
+							{
+									"@id": "/ysj/pools/values/offerinfos_collection_read",
+									"@language": "en",
+									"@type": "/ysj/pools/values/HydraReadAction",
+									"http://www.w3.org/ns/hydra/core#description": [
+											"Retrieves all Offer Info entities"
+									],
+									"http://www.w3.org/ns/hydra/core#returns": [
+											{
+													"@id": "/api/ysj/hydra/OfferInfoCollection",
+													"@language": "en",
+													"@type": "http://www.w3.org/ns/hydra/core#Collection",
+													"http://www.w3.org/ns/hydra/core#SupportedProperty": [
+															{
+																	"@id": "/ysj/pools/values/offerinfos_member",
+																	"@language": "en",
+																	"@type": "/api/ysj/hydra/ActionableOfferInfo"
+															}
+													],
+													"http://www.w3.org/ns/hydra/core#title": [
+															"Collection of all Offer infos"
+													],
+													"http://www.w3.org/ns/hydra/core#supportedOperation": [
+															{
+																	"@id": "/ysj/pools/values/offerinfos_collection_read",
+																	"@language": "en",
+																	"@type": "/ysj/pools/values/HydraReadAction"
+															},
+															{
+																	"@id": "/ysj/pools/values/addOfferinfosOperation",
+																	"@language": "en",
+																	"@type": "/ysj/pools/values/HydraAddAction"
+															}
+													]
+											}
+									],
+									"http://www.w3.org/ns/hydra/core#method": [
+											"GET"
+									]
+							},
+							{
+									"@id": "/ysj/pools/values/addOfferinfosOperation",
+									"@language": "en",
+									"@type": "/ysj/pools/values/HydraAddAction",
+									"http://www.w3.org/ns/hydra/core#expects": [
+											{
+													"@id": "http://schema.org/Offer",
+													"@language": "en",
+													"@type": "http://schema.org/Intangible"
+											}
+									],
+									"http://www.w3.org/ns/hydra/core#returns": [
+											{
+													"@id": "http://schema.org/Offer",
+													"@language": "en",
+													"@type": "http://schema.org/Intangible"
+											}
+									],
+									"http://www.w3.org/ns/hydra/core#method": [
+											"POST"
+									]
+							}
+					]
+			},
+			{
+					"@id": "/ysj/pools/values/HydraUpdateAction",
+					"@language": "en",
+					"@type": [
+							"http://schema.org/UpdateAction",
+							"http://www.w3.org/ns/hydra/core#supportedOperation"
+					]
+			},
+			{
+					"@id": "/api/ysj/hydra/EntryPointLink",
+					"@language": "en",
+					"@type": "http://www.w3.org/ns/hydra/core#entrypoint",
+					"http://www.w3.org/ns/hydra/core#SupportedProperty": [
+							{
+									"@id": "/api/ysj/hydra/productinfos",
+									"@language": "en",
+									"@type": "/api/ysj/hydra/ProductInfoCollection",
+									"http://www.w3.org/ns/hydra/core#member": [],
+									"http://www.w3.org/ns/hydra/core#totalItems": [
+											0
+									]
+							},
+							{
+									"@id": "/api/ysj/hydra/offerinfos",
+									"@language": "en",
+									"@type": "/api/ysj/hydra/OfferInfoCollection",
+									"http://www.w3.org/ns/hydra/core#member": [],
+									"http://www.w3.org/ns/hydra/core#totalItems": [
+											0
+									]
+							}
+					]
+			},
+			{
+					"@id": "http://schema.org/Offer",
+					"@language": "en",
+					"@type": "http://schema.org/Intangible"
+			},
+			{
+					"@id": "/ysj/pools/values/HydraDeleteAction",
+					"@language": "en",
+					"@type": [
+							"http://schema.org/DeleteAction",
+							"http://www.w3.org/ns/hydra/core#supportedOperation"
+					]
+			},
+			{
+					"@id": "/api/ysj/hydra/ProductInfoCollection",
+					"@language": "en",
+					"@type": "http://www.w3.org/ns/hydra/core#Collection",
+					"http://www.w3.org/ns/hydra/core#SupportedProperty": [
+							{
+									"@id": "/ysj/pools/values/productinfos_member",
+									"@language": "en",
+									"@type": "/api/ysj/hydra/ActionableProductInfo",
+									"http://www.w3.org/ns/hydra/core#readable": [
+											true
+									],
+									"http://www.w3.org/ns/hydra/core#title": [
+											"members"
+									],
+									"http://www.w3.org/ns/hydra/core#writeable": [
+											false
+									],
+									"http://www.w3.org/ns/hydra/core#property": [
+											{
+													"@id": "http://www.w3.org/ns/hydra/core#member",
+													"@language": "en",
+													"@type": "http://www.w3.org/2000/01/rdf-schema#Property"
+											}
+									],
+									"http://www.w3.org/ns/hydra/core#description": [
+											"The productinfos"
+									]
+							}
+					],
+					"http://www.w3.org/ns/hydra/core#title": [
+							"Collection of all product infos"
+					],
+					"http://www.w3.org/ns/hydra/core#supportedOperation": [
+							{
+									"@id": "/ysj/pools/values/productinfos_collection_read",
+									"@language": "en",
+									"@type": "/ysj/pools/values/HydraReadAction",
+									"http://www.w3.org/ns/hydra/core#description": [
+											"Retrieves all Product Info entities"
+									],
+									"http://www.w3.org/ns/hydra/core#method": [
+											"GET"
+									],
+									"http://www.w3.org/ns/hydra/core#returns": [
+											{
+													"@id": "/api/ysj/hydra/ProductInfoCollection",
+													"@language": "en",
+													"@type": "http://www.w3.org/ns/hydra/core#Collection",
+													"http://www.w3.org/ns/hydra/core#SupportedProperty": [
+															{
+																	"@id": "/ysj/pools/values/productinfos_member",
+																	"@language": "en",
+																	"@type": "/api/ysj/hydra/ActionableProductInfo"
+															}
+													],
+													"http://www.w3.org/ns/hydra/core#title": [
+															"Collection of all product infos"
+													],
+													"http://www.w3.org/ns/hydra/core#supportedOperation": [
+															{
+																	"@id": "/ysj/pools/values/productinfos_collection_read",
+																	"@language": "en",
+																	"@type": "/ysj/pools/values/HydraReadAction"
+															},
+															{
+																	"@id": "/ysj/pools/values/addProductinfosOperation",
+																	"@language": "en",
+																	"@type": "/ysj/pools/values/HydraAddAction"
+															}
+													]
+											}
+									]
+							},
+							{
+									"@id": "/ysj/pools/values/addProductinfosOperation",
+									"@language": "en",
+									"@type": "/ysj/pools/values/HydraAddAction",
+									"http://www.w3.org/ns/hydra/core#expects": [
+											{
+													"@id": "http://schema.org/Product",
+													"@language": "en",
+													"@type": "http://schema.org/Thing"
+											}
+									],
+									"http://www.w3.org/ns/hydra/core#method": [
+											"POST"
+									],
+									"http://www.w3.org/ns/hydra/core#returns": [
+											{
+													"@id": "http://schema.org/Product",
+													"@language": "en",
+													"@type": "http://schema.org/Thing"
+											}
+									]
+							}
+					]
+			},
+			{
+					"@id": "/ysj/pools/values/HydraReadAction",
+					"@language": "en",
+					"@type": [
+							"http://schema.org/ReadAction",
+							"http://www.w3.org/ns/hydra/core#supportedOperation"
+					]
+			}
+	]
+}
