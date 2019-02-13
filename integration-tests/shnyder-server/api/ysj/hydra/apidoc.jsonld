@@ -597,7 +597,7 @@
         }
     ],
     "http://www.w3.org/ns/hydra/core#entrypoint": {
-        "@id": "http://shnyder.com/api/ysj/hydra/",
+        "@id": "/api/ysj/hydra",
         "@language": "en",
         "@type": "rdfs:Class"
     }
