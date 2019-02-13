@@ -8,7 +8,7 @@
 	"@type": "http://www.w3.org/ns/hydra/core#ApiDocumentation",
 	"http://www.w3.org/ns/hydra/core#entrypoint": [
 			{
-					"@id": "/api/ysj/hydra/",
+					"@id": "/api/ysj/hydra",
 					"@language": "en",
 					"@type": "rdfs:Class"
 			}
@@ -38,7 +38,7 @@
 									]
 							}
 					],
-					"http://www.w3.org/ns/hydra/core#supportedOperation": [
+					"http://www.w3.org/ns/hydra/core#operation": [
 							{
 									"@id": "/ysj/pools/values/productinfo_replace",
 									"@language": "en",
@@ -100,7 +100,7 @@
 					"@language": "en",
 					"@type": [
 							"http://schema.org/AddAction",
-							"http://www.w3.org/ns/hydra/core#supportedOperation"
+							"http://www.w3.org/ns/hydra/core#operation"
 					]
 			},
 			{
@@ -118,7 +118,7 @@
 					"http://www.w3.org/ns/hydra/core#title": [
 							"a schema.org/Offer, accessible with hydra"
 					],
-					"http://www.w3.org/ns/hydra/core#supportedOperation": [
+					"http://www.w3.org/ns/hydra/core#operation": [
 							{
 									"@id": "/ysj/pools/values/offerinfo_read",
 									"@language": "en",
@@ -208,7 +208,7 @@
 					"http://www.w3.org/ns/hydra/core#title": [
 							"Collection of all Offer infos"
 					],
-					"http://www.w3.org/ns/hydra/core#supportedOperation": [
+					"http://www.w3.org/ns/hydra/core#operation": [
 							{
 									"@id": "/ysj/pools/values/offerinfos_collection_read",
 									"@language": "en",
@@ -231,7 +231,7 @@
 													"http://www.w3.org/ns/hydra/core#title": [
 															"Collection of all Offer infos"
 													],
-													"http://www.w3.org/ns/hydra/core#supportedOperation": [
+													"http://www.w3.org/ns/hydra/core#operation": [
 															{
 																	"@id": "/ysj/pools/values/offerinfos_collection_read",
 																	"@language": "en",
@@ -278,7 +278,7 @@
 					"@language": "en",
 					"@type": [
 							"http://schema.org/UpdateAction",
-							"http://www.w3.org/ns/hydra/core#supportedOperation"
+							"http://www.w3.org/ns/hydra/core#operation"
 					]
 			},
 			{
@@ -316,7 +316,7 @@
 					"@language": "en",
 					"@type": [
 							"http://schema.org/DeleteAction",
-							"http://www.w3.org/ns/hydra/core#supportedOperation"
+							"http://www.w3.org/ns/hydra/core#operation"
 					]
 			},
 			{
@@ -352,7 +352,7 @@
 					"http://www.w3.org/ns/hydra/core#title": [
 							"Collection of all product infos"
 					],
-					"http://www.w3.org/ns/hydra/core#supportedOperation": [
+					"http://www.w3.org/ns/hydra/core#operation": [
 							{
 									"@id": "/ysj/pools/values/productinfos_collection_read",
 									"@language": "en",
@@ -378,7 +378,7 @@
 													"http://www.w3.org/ns/hydra/core#title": [
 															"Collection of all product infos"
 													],
-													"http://www.w3.org/ns/hydra/core#supportedOperation": [
+													"http://www.w3.org/ns/hydra/core#operation": [
 															{
 																	"@id": "/ysj/pools/values/productinfos_collection_read",
 																	"@language": "en",
@@ -422,7 +422,7 @@
 					"@language": "en",
 					"@type": [
 							"http://schema.org/ReadAction",
-							"http://www.w3.org/ns/hydra/core#supportedOperation"
+							"http://www.w3.org/ns/hydra/core#operation"
 					]
 			}
 	]

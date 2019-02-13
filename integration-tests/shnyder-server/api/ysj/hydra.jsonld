@@ -1,0 +1,1473 @@
+{
+    "@context": {
+        "@vocab": "http://schema.org/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "@id": "http://shnyder.com/api/ysj/hydra/EntryPointLink",
+    "@language": "en",
+    "@type": "http://www.w3.org/ns/hydra/core#entrypoint",
+    "http://www.w3.org/ns/hydra/core#SupportedProperty": [
+        {
+            "@id": "http://shnyder.com/api/ysj/hydra/offerinfos",
+            "@language": "en",
+            "@type": "http://shnyder.com/api/ysj/hydra/OfferInfoCollection",
+            "http://www.w3.org/ns/hydra/core#title": "Collection of all Offer infos",
+            "http://www.w3.org/ns/hydra/core#SupportedProperty": {
+                "@id": "http://shnyder.com/ysj/pools/values/offerinfos_member",
+                "@language": "en",
+                "@type": "http://shnyder.com/api/ysj/hydra/ActionableOfferInfo",
+                "http://www.w3.org/ns/hydra/core#title": "members",
+                "http://www.w3.org/ns/hydra/core#supportedOperation": [
+                    {
+                        "@id": "http://shnyder.com/ysj/pools/values/offerinfo_delete",
+                        "@language": "en",
+                        "@type": "http://shnyder.com/ysj/pools/values/HydraDeleteAction",
+                        "http://www.w3.org/ns/hydra/core#description": "Deletes a Offer entity",
+                        "http://www.w3.org/ns/hydra/core#method": "DELETE"
+                    },
+                    {
+                        "@id": "http://shnyder.com/ysj/pools/values/offerinfo_read",
+                        "@language": "en",
+                        "@type": "http://shnyder.com/ysj/pools/values/HydraReadAction",
+                        "http://www.w3.org/ns/hydra/core#method": "GET",
+                        "http://www.w3.org/ns/hydra/core#description": "Retrieves an Offer entity",
+                        "http://www.w3.org/ns/hydra/core#returns": {
+                            "@id": "http://schema.org/Offer",
+                            "@language": "en",
+                            "@type": "http://schema.org/Intangible"
+                        }
+                    },
+                    {
+                        "@id": "http://shnyder.com/ysj/pools/values/offerinfo_replace",
+                        "@language": "en",
+                        "@type": "http://shnyder.com/ysj/pools/values/HydraUpdateAction",
+                        "http://www.w3.org/ns/hydra/core#returns": {
+                            "@id": "http://schema.org/Offer",
+                            "@language": "en",
+                            "@type": "http://schema.org/Intangible"
+                        },
+                        "http://www.w3.org/ns/hydra/core#method": "PUT",
+                        "http://www.w3.org/ns/hydra/core#description": "Replaces an existing Offer entity",
+                        "http://www.w3.org/ns/hydra/core#expects": {
+                            "@id": "http://schema.org/Offer",
+                            "@language": "en",
+                            "@type": "http://schema.org/Intangible"
+                        }
+                    }
+                ],
+                "http://www.w3.org/ns/hydra/core#writeable": false,
+                "http://www.w3.org/ns/hydra/core#readable": false,
+                "http://www.w3.org/ns/hydra/core#property": {
+                    "@id": "http://www.w3.org/ns/hydra/core#member",
+                    "@language": "en",
+                    "@type": "http://www.w3.org/2000/01/rdf-schema#Property"
+                },
+                "http://www.w3.org/ns/hydra/core#description": "The offer infos"
+            },
+            "http://www.w3.org/ns/hydra/core#supportedOperation": [
+                {
+                    "@id": "http://shnyder.com/ysj/pools/values/offerinfos_collection_read",
+                    "@language": "en",
+                    "@type": "http://shnyder.com/ysj/pools/values/HydraReadAction",
+                    "http://www.w3.org/ns/hydra/core#method": "GET",
+                    "http://www.w3.org/ns/hydra/core#description": "Retrieves all Offer Info entities",
+                    "http://www.w3.org/ns/hydra/core#returns": {
+                        "@id": "http://shnyder.com/api/ysj/hydra/OfferInfoCollection",
+                        "@language": "en",
+                        "@type": "http://www.w3.org/ns/hydra/core#Collection",
+                        "http://www.w3.org/ns/hydra/core#member": {
+                            "@id": "http://www.w3.org/ns/hydra/core#Resource",
+                            "@language": "en",
+                            "@type": "http://www.w3.org/ns/hydra/core#Class"
+                        },
+                        "http://www.w3.org/ns/hydra/core#totalItems": {
+                            "@id": "http://schema.org/Integer",
+                            "@language": "en",
+                            "@type": "http://schema.org/Number"
+                        },
+                        "http://www.w3.org/ns/hydra/core#title": "Collection of all Offer infos",
+                        "http://www.w3.org/ns/hydra/core#SupportedProperty": {
+                            "@id": "http://shnyder.com/ysj/pools/values/offerinfos_member",
+                            "@language": "en",
+                            "@type": "http://shnyder.com/api/ysj/hydra/ActionableOfferInfo"
+                        },
+                        "http://www.w3.org/ns/hydra/core#supportedOperation": [
+                            {
+                                "@id": "http://shnyder.com/ysj/pools/values/offerinfos_collection_read",
+                                "@language": "en",
+                                "@type": "http://shnyder.com/ysj/pools/values/HydraReadAction"
+                            },
+                            {
+                                "@id": "http://shnyder.com/ysj/pools/values/addOfferinfosOperation",
+                                "@language": "en",
+                                "@type": "http://shnyder.com/ysj/pools/values/HydraAddAction"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "@id": "http://shnyder.com/ysj/pools/values/addOfferinfosOperation",
+                    "@language": "en",
+                    "@type": "http://shnyder.com/ysj/pools/values/HydraAddAction",
+                    "http://www.w3.org/ns/hydra/core#method": "POST",
+                    "http://www.w3.org/ns/hydra/core#expects": {
+                        "@id": "http://schema.org/Offer",
+                        "@language": "en",
+                        "@type": "http://schema.org/Intangible",
+                        "http://schema.org/validThrough": {
+                            "@id": "http://schema.org/DateTime",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/eligibleRegion": [
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            },
+                            {
+                                "@id": "http://schema.org/Place",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            },
+                            {
+                                "@id": "http://schema.org/GeoShape",
+                                "@language": "en",
+                                "@type": "http://schema.org/StructuredValue"
+                            }
+                        ],
+                        "http://schema.org/price": [
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            },
+                            {
+                                "@id": "http://schema.org/Number",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            }
+                        ],
+                        "http://schema.org/gtin14": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/addOn": {
+                            "@id": "http://schema.org/Offer",
+                            "@language": "en",
+                            "@type": "http://schema.org/Intangible"
+                        },
+                        "http://schema.org/availableDeliveryMethod": {
+                            "@id": "http://schema.org/DeliveryMethod",
+                            "@language": "en",
+                            "@type": "http://schema.org/Enumeration"
+                        },
+                        "http://schema.org/includesObject": {
+                            "@id": "http://schema.org/TypeAndQuantityNode",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/gtin12": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/itemOffered": [
+                            {
+                                "@id": "http://schema.org/Service",
+                                "@language": "en",
+                                "@type": "http://schema.org/Intangible"
+                            },
+                            {
+                                "@id": "http://schema.org/Product",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            }
+                        ],
+                        "http://schema.org/availableAtOrFrom": {
+                            "@id": "http://schema.org/Place",
+                            "@language": "en",
+                            "@type": "http://schema.org/Thing"
+                        },
+                        "http://schema.org/deliveryLeadTime": {
+                            "@id": "http://schema.org/QuantitativeValue",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/eligibleTransactionVolume": {
+                            "@id": "http://schema.org/PriceSpecification",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/eligibleCustomerType": {
+                            "@id": "http://schema.org/BusinessEntityType",
+                            "@language": "en",
+                            "@type": "http://schema.org/Enumeration"
+                        },
+                        "http://schema.org/areaServed": [
+                            {
+                                "@id": "http://schema.org/AdministrativeArea",
+                                "@language": "en",
+                                "@type": "http://schema.org/Place"
+                            },
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            },
+                            {
+                                "@id": "http://schema.org/Place",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            },
+                            {
+                                "@id": "http://schema.org/GeoShape",
+                                "@language": "en",
+                                "@type": "http://schema.org/StructuredValue"
+                            }
+                        ],
+                        "http://schema.org/businessFunction": {
+                            "@id": "http://schema.org/BusinessFunction",
+                            "@language": "en",
+                            "@type": "http://schema.org/Enumeration"
+                        },
+                        "http://schema.org/seller": [
+                            {
+                                "@id": "http://schema.org/Person",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            },
+                            {
+                                "@id": "http://schema.org/Organization",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            }
+                        ],
+                        "http://schema.org/advanceBookingRequirement": {
+                            "@id": "http://schema.org/QuantitativeValue",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/eligibleDuration": {
+                            "@id": "http://schema.org/QuantitativeValue",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/category": [
+                            {
+                                "@id": "http://schema.org/Thing",
+                                "@language": "en",
+                                "@type": "rdfs:Class"
+                            },
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            }
+                        ],
+                        "http://schema.org/review": {
+                            "@id": "http://schema.org/Review",
+                            "@language": "en",
+                            "@type": "http://schema.org/CreativeWork"
+                        },
+                        "http://schema.org/ineligibleRegion": [
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            },
+                            {
+                                "@id": "http://schema.org/Place",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            },
+                            {
+                                "@id": "http://schema.org/GeoShape",
+                                "@language": "en",
+                                "@type": "http://schema.org/StructuredValue"
+                            }
+                        ],
+                        "http://schema.org/warranty": {
+                            "@id": "http://schema.org/WarrantyPromise",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/priceSpecification": {
+                            "@id": "http://schema.org/PriceSpecification",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/priceCurrency": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/availabilityStarts": {
+                            "@id": "http://schema.org/DateTime",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/aggregateRating": {
+                            "@id": "http://schema.org/AggregateRating",
+                            "@language": "en",
+                            "@type": "http://schema.org/Rating"
+                        },
+                        "http://schema.org/mpn": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/priceValidUntil": {
+                            "@id": "http://schema.org/Date",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/sku": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/inventoryLevel": {
+                            "@id": "http://schema.org/QuantitativeValue",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/availabilityEnds": {
+                            "@id": "http://schema.org/DateTime",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/gtin8": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/offeredBy": [
+                            {
+                                "@id": "http://schema.org/Person",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            },
+                            {
+                                "@id": "http://schema.org/Organization",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            }
+                        ],
+                        "http://schema.org/validFrom": {
+                            "@id": "http://schema.org/DateTime",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/eligibleQuantity": {
+                            "@id": "http://schema.org/QuantitativeValue",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/gtin13": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/itemCondition": {
+                            "@id": "http://schema.org/OfferItemCondition",
+                            "@language": "en",
+                            "@type": "http://schema.org/Enumeration"
+                        },
+                        "http://schema.org/serialNumber": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/acceptedPaymentMethod": [
+                            {
+                                "@id": "http://schema.org/LoanOrCredit",
+                                "@language": "en",
+                                "@type": "http://schema.org/FinancialProduct"
+                            },
+                            {
+                                "@id": "http://schema.org/PaymentMethod",
+                                "@language": "en",
+                                "@type": "http://schema.org/Enumeration"
+                            }
+                        ],
+                        "http://schema.org/availability": {
+                            "@id": "http://schema.org/ItemAvailability",
+                            "@language": "en",
+                            "@type": "http://schema.org/Enumeration"
+                        }
+                    },
+                    "http://www.w3.org/ns/hydra/core#returns": {
+                        "@id": "http://schema.org/Offer",
+                        "@language": "en",
+                        "@type": "http://schema.org/Intangible",
+                        "http://schema.org/validThrough": {
+                            "@id": "http://schema.org/DateTime",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/eligibleRegion": [
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            },
+                            {
+                                "@id": "http://schema.org/Place",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            },
+                            {
+                                "@id": "http://schema.org/GeoShape",
+                                "@language": "en",
+                                "@type": "http://schema.org/StructuredValue"
+                            }
+                        ],
+                        "http://schema.org/price": [
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            },
+                            {
+                                "@id": "http://schema.org/Number",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            }
+                        ],
+                        "http://schema.org/gtin14": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/addOn": {
+                            "@id": "http://schema.org/Offer",
+                            "@language": "en",
+                            "@type": "http://schema.org/Intangible"
+                        },
+                        "http://schema.org/availableDeliveryMethod": {
+                            "@id": "http://schema.org/DeliveryMethod",
+                            "@language": "en",
+                            "@type": "http://schema.org/Enumeration"
+                        },
+                        "http://schema.org/includesObject": {
+                            "@id": "http://schema.org/TypeAndQuantityNode",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/gtin12": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/itemOffered": [
+                            {
+                                "@id": "http://schema.org/Service",
+                                "@language": "en",
+                                "@type": "http://schema.org/Intangible"
+                            },
+                            {
+                                "@id": "http://schema.org/Product",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            }
+                        ],
+                        "http://schema.org/availableAtOrFrom": {
+                            "@id": "http://schema.org/Place",
+                            "@language": "en",
+                            "@type": "http://schema.org/Thing"
+                        },
+                        "http://schema.org/deliveryLeadTime": {
+                            "@id": "http://schema.org/QuantitativeValue",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/eligibleTransactionVolume": {
+                            "@id": "http://schema.org/PriceSpecification",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/eligibleCustomerType": {
+                            "@id": "http://schema.org/BusinessEntityType",
+                            "@language": "en",
+                            "@type": "http://schema.org/Enumeration"
+                        },
+                        "http://schema.org/areaServed": [
+                            {
+                                "@id": "http://schema.org/AdministrativeArea",
+                                "@language": "en",
+                                "@type": "http://schema.org/Place"
+                            },
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            },
+                            {
+                                "@id": "http://schema.org/Place",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            },
+                            {
+                                "@id": "http://schema.org/GeoShape",
+                                "@language": "en",
+                                "@type": "http://schema.org/StructuredValue"
+                            }
+                        ],
+                        "http://schema.org/businessFunction": {
+                            "@id": "http://schema.org/BusinessFunction",
+                            "@language": "en",
+                            "@type": "http://schema.org/Enumeration"
+                        },
+                        "http://schema.org/seller": [
+                            {
+                                "@id": "http://schema.org/Person",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            },
+                            {
+                                "@id": "http://schema.org/Organization",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            }
+                        ],
+                        "http://schema.org/advanceBookingRequirement": {
+                            "@id": "http://schema.org/QuantitativeValue",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/eligibleDuration": {
+                            "@id": "http://schema.org/QuantitativeValue",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/category": [
+                            {
+                                "@id": "http://schema.org/Thing",
+                                "@language": "en",
+                                "@type": "rdfs:Class"
+                            },
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            }
+                        ],
+                        "http://schema.org/review": {
+                            "@id": "http://schema.org/Review",
+                            "@language": "en",
+                            "@type": "http://schema.org/CreativeWork"
+                        },
+                        "http://schema.org/ineligibleRegion": [
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            },
+                            {
+                                "@id": "http://schema.org/Place",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            },
+                            {
+                                "@id": "http://schema.org/GeoShape",
+                                "@language": "en",
+                                "@type": "http://schema.org/StructuredValue"
+                            }
+                        ],
+                        "http://schema.org/warranty": {
+                            "@id": "http://schema.org/WarrantyPromise",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/priceSpecification": {
+                            "@id": "http://schema.org/PriceSpecification",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/priceCurrency": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/availabilityStarts": {
+                            "@id": "http://schema.org/DateTime",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/aggregateRating": {
+                            "@id": "http://schema.org/AggregateRating",
+                            "@language": "en",
+                            "@type": "http://schema.org/Rating"
+                        },
+                        "http://schema.org/mpn": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/priceValidUntil": {
+                            "@id": "http://schema.org/Date",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/sku": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/inventoryLevel": {
+                            "@id": "http://schema.org/QuantitativeValue",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/availabilityEnds": {
+                            "@id": "http://schema.org/DateTime",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/gtin8": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/offeredBy": [
+                            {
+                                "@id": "http://schema.org/Person",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            },
+                            {
+                                "@id": "http://schema.org/Organization",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            }
+                        ],
+                        "http://schema.org/validFrom": {
+                            "@id": "http://schema.org/DateTime",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/eligibleQuantity": {
+                            "@id": "http://schema.org/QuantitativeValue",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/gtin13": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/itemCondition": {
+                            "@id": "http://schema.org/OfferItemCondition",
+                            "@language": "en",
+                            "@type": "http://schema.org/Enumeration"
+                        },
+                        "http://schema.org/serialNumber": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/acceptedPaymentMethod": [
+                            {
+                                "@id": "http://schema.org/LoanOrCredit",
+                                "@language": "en",
+                                "@type": "http://schema.org/FinancialProduct"
+                            },
+                            {
+                                "@id": "http://schema.org/PaymentMethod",
+                                "@language": "en",
+                                "@type": "http://schema.org/Enumeration"
+                            }
+                        ],
+                        "http://schema.org/availability": {
+                            "@id": "http://schema.org/ItemAvailability",
+                            "@language": "en",
+                            "@type": "http://schema.org/Enumeration"
+                        }
+                    }
+                }
+            ],
+            "http://www.w3.org/ns/hydra/core#totalItems": 0,
+            "http://www.w3.org/ns/hydra/core#member": []
+        },
+        {
+            "@id": "http://shnyder.com/api/ysj/hydra/productinfos",
+            "@language": "en",
+            "@type": "http://shnyder.com/api/ysj/hydra/ProductInfoCollection",
+            "http://www.w3.org/ns/hydra/core#SupportedProperty": {
+                "@id": "http://shnyder.com/ysj/pools/values/productinfos_member",
+                "@language": "en",
+                "@type": "http://shnyder.com/api/ysj/hydra/ActionableProductInfo",
+                "http://www.w3.org/ns/hydra/core#supportedOperation": [
+                    {
+                        "@id": "http://shnyder.com/ysj/pools/values/productinfo_delete",
+                        "@language": "en",
+                        "@type": "http://shnyder.com/ysj/pools/values/HydraDeleteAction",
+                        "http://www.w3.org/ns/hydra/core#method": "DELETE",
+                        "http://www.w3.org/ns/hydra/core#description": "Deletes a Product entity"
+                    },
+                    {
+                        "@id": "http://shnyder.com/ysj/pools/values/productinfo_read",
+                        "@language": "en",
+                        "@type": "http://shnyder.com/ysj/pools/values/HydraReadAction",
+                        "http://www.w3.org/ns/hydra/core#method": "GET",
+                        "http://www.w3.org/ns/hydra/core#returns": {
+                            "@id": "http://schema.org/Product",
+                            "@language": "en",
+                            "@type": "http://schema.org/Thing"
+                        },
+                        "http://www.w3.org/ns/hydra/core#description": "Retrieves a Product entity"
+                    },
+                    {
+                        "@id": "http://shnyder.com/ysj/pools/values/productinfo_replace",
+                        "@language": "en",
+                        "@type": "http://shnyder.com/ysj/pools/values/HydraUpdateAction",
+                        "http://www.w3.org/ns/hydra/core#description": "Replaces an existing Product entity",
+                        "http://www.w3.org/ns/hydra/core#expects": {
+                            "@id": "http://schema.org/Product",
+                            "@language": "en",
+                            "@type": "http://schema.org/Thing"
+                        },
+                        "http://www.w3.org/ns/hydra/core#returns": {
+                            "@id": "http://schema.org/Product",
+                            "@language": "en",
+                            "@type": "http://schema.org/Thing"
+                        },
+                        "http://www.w3.org/ns/hydra/core#method": "PUT"
+                    }
+                ],
+                "http://www.w3.org/ns/hydra/core#title": "members",
+                "http://www.w3.org/ns/hydra/core#SupportedProperty": {
+                    "@id": "http://shnyder.com/ysj/pools/values/actionableoffers",
+                    "@language": "en",
+                    "@type": "http://shnyder.com/api/ysj/hydra/OfferInfoCollection",
+                    "http://www.w3.org/ns/hydra/core#title": "Collection of all Offer infos",
+                    "http://www.w3.org/ns/hydra/core#SupportedProperty": {
+                        "@id": "http://shnyder.com/ysj/pools/values/offerinfos_member",
+                        "@language": "en",
+                        "@type": "http://shnyder.com/api/ysj/hydra/ActionableOfferInfo"
+                    },
+                    "http://www.w3.org/ns/hydra/core#supportedOperation": [
+                        {
+                            "@id": "http://shnyder.com/ysj/pools/values/offerinfos_collection_read",
+                            "@language": "en",
+                            "@type": "http://shnyder.com/ysj/pools/values/HydraReadAction"
+                        },
+                        {
+                            "@id": "http://shnyder.com/ysj/pools/values/addOfferinfosOperation",
+                            "@language": "en",
+                            "@type": "http://shnyder.com/ysj/pools/values/HydraAddAction"
+                        }
+                    ],
+                    "http://www.w3.org/ns/hydra/core#property": {
+                        "@id": "http://schema.org/offers",
+                        "@language": "en",
+                        "@type": "http://www.w3.org/2000/01/rdf-schema#Property"
+                    }
+                },
+                "http://www.w3.org/ns/hydra/core#description": "The productinfos",
+                "http://www.w3.org/ns/hydra/core#property": {
+                    "@id": "http://www.w3.org/ns/hydra/core#member",
+                    "@language": "en",
+                    "@type": "http://www.w3.org/2000/01/rdf-schema#Property"
+                },
+                "http://www.w3.org/ns/hydra/core#readable": true,
+                "http://www.w3.org/ns/hydra/core#writeable": false
+            },
+            "http://www.w3.org/ns/hydra/core#title": "Collection of all product infos",
+            "http://www.w3.org/ns/hydra/core#supportedOperation": [
+                {
+                    "@id": "http://shnyder.com/ysj/pools/values/productinfos_collection_read",
+                    "@language": "en",
+                    "@type": "http://shnyder.com/ysj/pools/values/HydraReadAction",
+                    "http://www.w3.org/ns/hydra/core#method": "GET",
+                    "http://www.w3.org/ns/hydra/core#returns": {
+                        "@id": "http://shnyder.com/api/ysj/hydra/ProductInfoCollection",
+                        "@language": "en",
+                        "@type": "http://www.w3.org/ns/hydra/core#Collection",
+                        "http://www.w3.org/ns/hydra/core#member": {
+                            "@id": "http://www.w3.org/ns/hydra/core#Resource",
+                            "@language": "en",
+                            "@type": "http://www.w3.org/ns/hydra/core#Class"
+                        },
+                        "http://www.w3.org/ns/hydra/core#totalItems": {
+                            "@id": "http://schema.org/Integer",
+                            "@language": "en",
+                            "@type": "http://schema.org/Number"
+                        },
+                        "http://www.w3.org/ns/hydra/core#SupportedProperty": {
+                            "@id": "http://shnyder.com/ysj/pools/values/productinfos_member",
+                            "@language": "en",
+                            "@type": "http://shnyder.com/api/ysj/hydra/ActionableProductInfo"
+                        },
+                        "http://www.w3.org/ns/hydra/core#title": "Collection of all product infos",
+                        "http://www.w3.org/ns/hydra/core#supportedOperation": [
+                            {
+                                "@id": "http://shnyder.com/ysj/pools/values/productinfos_collection_read",
+                                "@language": "en",
+                                "@type": "http://shnyder.com/ysj/pools/values/HydraReadAction"
+                            },
+                            {
+                                "@id": "http://shnyder.com/ysj/pools/values/addProductinfosOperation",
+                                "@language": "en",
+                                "@type": "http://shnyder.com/ysj/pools/values/HydraAddAction"
+                            }
+                        ]
+                    },
+                    "http://www.w3.org/ns/hydra/core#description": "Retrieves all Product Info entities"
+                },
+                {
+                    "@id": "http://shnyder.com/ysj/pools/values/addProductinfosOperation",
+                    "@language": "en",
+                    "@type": "http://shnyder.com/ysj/pools/values/HydraAddAction",
+                    "http://www.w3.org/ns/hydra/core#method": "POST",
+                    "http://www.w3.org/ns/hydra/core#expects": {
+                        "@id": "http://schema.org/Product",
+                        "@language": "en",
+                        "@type": "http://schema.org/Thing",
+                        "http://schema.org/additionalType": {
+                            "@id": "http://schema.org/URL",
+                            "@language": "en",
+                            "@type": "http://schema.org/Text"
+                        },
+                        "http://schema.org/sameAs": {
+                            "@id": "http://schema.org/URL",
+                            "@language": "en",
+                            "@type": "http://schema.org/Text"
+                        },
+                        "http://schema.org/identifier": [
+                            {
+                                "@id": "http://schema.org/URL",
+                                "@language": "en",
+                                "@type": "http://schema.org/Text"
+                            },
+                            {
+                                "@id": "http://schema.org/PropertyValue",
+                                "@language": "en",
+                                "@type": "http://schema.org/StructuredValue"
+                            },
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            }
+                        ],
+                        "http://schema.org/potentialAction": {
+                            "@id": "http://schema.org/Action",
+                            "@language": "en",
+                            "@type": "http://schema.org/Thing"
+                        },
+                        "http://schema.org/description": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/name": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/image": [
+                            {
+                                "@id": "http://schema.org/URL",
+                                "@language": "en",
+                                "@type": "http://schema.org/Text"
+                            },
+                            {
+                                "@id": "http://schema.org/ImageObject",
+                                "@language": "en",
+                                "@type": "http://schema.org/MediaObject"
+                            }
+                        ],
+                        "http://schema.org/alternateName": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/disambiguatingDescription": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/mainEntityOfPage": [
+                            {
+                                "@id": "http://schema.org/URL",
+                                "@language": "en",
+                                "@type": "http://schema.org/Text"
+                            },
+                            {
+                                "@id": "http://schema.org/CreativeWork",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            }
+                        ],
+                        "http://schema.org/url": {
+                            "@id": "http://schema.org/URL",
+                            "@language": "en",
+                            "@type": "http://schema.org/Text"
+                        },
+                        "http://schema.org/purchaseDate": {
+                            "@id": "http://schema.org/Date",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/manufacturer": {
+                            "@id": "http://schema.org/Organization",
+                            "@language": "en",
+                            "@type": "http://schema.org/Thing"
+                        },
+                        "http://schema.org/review": {
+                            "@id": "http://schema.org/Review",
+                            "@language": "en",
+                            "@type": "http://schema.org/CreativeWork"
+                        },
+                        "http://schema.org/brand": [
+                            {
+                                "@id": "http://schema.org/Organization",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            },
+                            {
+                                "@id": "http://schema.org/Brand",
+                                "@language": "en",
+                                "@type": "http://schema.org/Intangible"
+                            }
+                        ],
+                        "http://schema.org/itemCondition": {
+                            "@id": "http://schema.org/OfferItemCondition",
+                            "@language": "en",
+                            "@type": "http://schema.org/Enumeration"
+                        },
+                        "http://schema.org/releaseDate": {
+                            "@id": "http://schema.org/Date",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/gtin12": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/additionalProperty": {
+                            "@id": "http://schema.org/PropertyValue",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/height": [
+                            {
+                                "@id": "http://schema.org/Distance",
+                                "@language": "en",
+                                "@type": "http://schema.org/Quantity"
+                            },
+                            {
+                                "@id": "http://schema.org/QuantitativeValue",
+                                "@language": "en",
+                                "@type": "http://schema.org/StructuredValue"
+                            }
+                        ],
+                        "http://schema.org/gtin13": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/gtin8": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/mpn": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/weight": {
+                            "@id": "http://schema.org/QuantitativeValue",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/isConsumableFor": {
+                            "@id": "http://schema.org/Product",
+                            "@language": "en",
+                            "@type": "http://schema.org/Thing"
+                        },
+                        "http://schema.org/gtin14": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/productID": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/aggregateRating": {
+                            "@id": "http://schema.org/AggregateRating",
+                            "@language": "en",
+                            "@type": "http://schema.org/Rating"
+                        },
+                        "http://schema.org/productionDate": {
+                            "@id": "http://schema.org/Date",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/category": [
+                            {
+                                "@id": "http://schema.org/Thing",
+                                "@language": "en",
+                                "@type": "rdfs:Class"
+                            },
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            }
+                        ],
+                        "http://schema.org/sku": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/isSimilarTo": [
+                            {
+                                "@id": "http://schema.org/Service",
+                                "@language": "en",
+                                "@type": "http://schema.org/Intangible"
+                            },
+                            {
+                                "@id": "http://schema.org/Product",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            }
+                        ],
+                        "http://schema.org/width": [
+                            {
+                                "@id": "http://schema.org/Distance",
+                                "@language": "en",
+                                "@type": "http://schema.org/Quantity"
+                            },
+                            {
+                                "@id": "http://schema.org/QuantitativeValue",
+                                "@language": "en",
+                                "@type": "http://schema.org/StructuredValue"
+                            }
+                        ],
+                        "http://schema.org/isAccessoryOrSparePartFor": {
+                            "@id": "http://schema.org/Product",
+                            "@language": "en",
+                            "@type": "http://schema.org/Thing"
+                        },
+                        "http://schema.org/color": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/award": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/offers": {
+                            "@id": "http://schema.org/Offer",
+                            "@language": "en",
+                            "@type": "http://schema.org/Intangible"
+                        },
+                        "http://schema.org/model": [
+                            {
+                                "@id": "http://schema.org/ProductModel",
+                                "@language": "en",
+                                "@type": "http://schema.org/Product"
+                            },
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            }
+                        ],
+                        "http://schema.org/material": [
+                            {
+                                "@id": "http://schema.org/URL",
+                                "@language": "en",
+                                "@type": "http://schema.org/Text"
+                            },
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            },
+                            {
+                                "@id": "http://schema.org/Product",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            }
+                        ],
+                        "http://schema.org/depth": [
+                            {
+                                "@id": "http://schema.org/Distance",
+                                "@language": "en",
+                                "@type": "http://schema.org/Quantity"
+                            },
+                            {
+                                "@id": "http://schema.org/QuantitativeValue",
+                                "@language": "en",
+                                "@type": "http://schema.org/StructuredValue"
+                            }
+                        ],
+                        "http://schema.org/audience": {
+                            "@id": "http://schema.org/Audience",
+                            "@language": "en",
+                            "@type": "http://schema.org/Intangible"
+                        },
+                        "http://schema.org/logo": [
+                            {
+                                "@id": "http://schema.org/URL",
+                                "@language": "en",
+                                "@type": "http://schema.org/Text"
+                            },
+                            {
+                                "@id": "http://schema.org/ImageObject",
+                                "@language": "en",
+                                "@type": "http://schema.org/MediaObject"
+                            }
+                        ],
+                        "http://schema.org/isRelatedTo": [
+                            {
+                                "@id": "http://schema.org/Service",
+                                "@language": "en",
+                                "@type": "http://schema.org/Intangible"
+                            },
+                            {
+                                "@id": "http://schema.org/Product",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            }
+                        ]
+                    },
+                    "http://www.w3.org/ns/hydra/core#returns": {
+                        "@id": "http://schema.org/Product",
+                        "@language": "en",
+                        "@type": "http://schema.org/Thing",
+                        "http://schema.org/additionalType": {
+                            "@id": "http://schema.org/URL",
+                            "@language": "en",
+                            "@type": "http://schema.org/Text"
+                        },
+                        "http://schema.org/sameAs": {
+                            "@id": "http://schema.org/URL",
+                            "@language": "en",
+                            "@type": "http://schema.org/Text"
+                        },
+                        "http://schema.org/identifier": [
+                            {
+                                "@id": "http://schema.org/URL",
+                                "@language": "en",
+                                "@type": "http://schema.org/Text"
+                            },
+                            {
+                                "@id": "http://schema.org/PropertyValue",
+                                "@language": "en",
+                                "@type": "http://schema.org/StructuredValue"
+                            },
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            }
+                        ],
+                        "http://schema.org/potentialAction": {
+                            "@id": "http://schema.org/Action",
+                            "@language": "en",
+                            "@type": "http://schema.org/Thing"
+                        },
+                        "http://schema.org/description": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/name": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/image": [
+                            {
+                                "@id": "http://schema.org/URL",
+                                "@language": "en",
+                                "@type": "http://schema.org/Text"
+                            },
+                            {
+                                "@id": "http://schema.org/ImageObject",
+                                "@language": "en",
+                                "@type": "http://schema.org/MediaObject"
+                            }
+                        ],
+                        "http://schema.org/alternateName": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/disambiguatingDescription": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/mainEntityOfPage": [
+                            {
+                                "@id": "http://schema.org/URL",
+                                "@language": "en",
+                                "@type": "http://schema.org/Text"
+                            },
+                            {
+                                "@id": "http://schema.org/CreativeWork",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            }
+                        ],
+                        "http://schema.org/url": {
+                            "@id": "http://schema.org/URL",
+                            "@language": "en",
+                            "@type": "http://schema.org/Text"
+                        },
+                        "http://schema.org/purchaseDate": {
+                            "@id": "http://schema.org/Date",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/manufacturer": {
+                            "@id": "http://schema.org/Organization",
+                            "@language": "en",
+                            "@type": "http://schema.org/Thing"
+                        },
+                        "http://schema.org/review": {
+                            "@id": "http://schema.org/Review",
+                            "@language": "en",
+                            "@type": "http://schema.org/CreativeWork"
+                        },
+                        "http://schema.org/brand": [
+                            {
+                                "@id": "http://schema.org/Organization",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            },
+                            {
+                                "@id": "http://schema.org/Brand",
+                                "@language": "en",
+                                "@type": "http://schema.org/Intangible"
+                            }
+                        ],
+                        "http://schema.org/itemCondition": {
+                            "@id": "http://schema.org/OfferItemCondition",
+                            "@language": "en",
+                            "@type": "http://schema.org/Enumeration"
+                        },
+                        "http://schema.org/releaseDate": {
+                            "@id": "http://schema.org/Date",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/gtin12": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/additionalProperty": {
+                            "@id": "http://schema.org/PropertyValue",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/height": [
+                            {
+                                "@id": "http://schema.org/Distance",
+                                "@language": "en",
+                                "@type": "http://schema.org/Quantity"
+                            },
+                            {
+                                "@id": "http://schema.org/QuantitativeValue",
+                                "@language": "en",
+                                "@type": "http://schema.org/StructuredValue"
+                            }
+                        ],
+                        "http://schema.org/gtin13": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/gtin8": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/mpn": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/weight": {
+                            "@id": "http://schema.org/QuantitativeValue",
+                            "@language": "en",
+                            "@type": "http://schema.org/StructuredValue"
+                        },
+                        "http://schema.org/isConsumableFor": {
+                            "@id": "http://schema.org/Product",
+                            "@language": "en",
+                            "@type": "http://schema.org/Thing"
+                        },
+                        "http://schema.org/gtin14": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/productID": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/aggregateRating": {
+                            "@id": "http://schema.org/AggregateRating",
+                            "@language": "en",
+                            "@type": "http://schema.org/Rating"
+                        },
+                        "http://schema.org/productionDate": {
+                            "@id": "http://schema.org/Date",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/category": [
+                            {
+                                "@id": "http://schema.org/Thing",
+                                "@language": "en",
+                                "@type": "rdfs:Class"
+                            },
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            }
+                        ],
+                        "http://schema.org/sku": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/isSimilarTo": [
+                            {
+                                "@id": "http://schema.org/Service",
+                                "@language": "en",
+                                "@type": "http://schema.org/Intangible"
+                            },
+                            {
+                                "@id": "http://schema.org/Product",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            }
+                        ],
+                        "http://schema.org/width": [
+                            {
+                                "@id": "http://schema.org/Distance",
+                                "@language": "en",
+                                "@type": "http://schema.org/Quantity"
+                            },
+                            {
+                                "@id": "http://schema.org/QuantitativeValue",
+                                "@language": "en",
+                                "@type": "http://schema.org/StructuredValue"
+                            }
+                        ],
+                        "http://schema.org/isAccessoryOrSparePartFor": {
+                            "@id": "http://schema.org/Product",
+                            "@language": "en",
+                            "@type": "http://schema.org/Thing"
+                        },
+                        "http://schema.org/color": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/award": {
+                            "@id": "http://schema.org/Text",
+                            "@language": "en",
+                            "@type": "http://schema.org/DataType"
+                        },
+                        "http://schema.org/offers": {
+                            "@id": "http://schema.org/Offer",
+                            "@language": "en",
+                            "@type": "http://schema.org/Intangible"
+                        },
+                        "http://schema.org/model": [
+                            {
+                                "@id": "http://schema.org/ProductModel",
+                                "@language": "en",
+                                "@type": "http://schema.org/Product"
+                            },
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            }
+                        ],
+                        "http://schema.org/material": [
+                            {
+                                "@id": "http://schema.org/URL",
+                                "@language": "en",
+                                "@type": "http://schema.org/Text"
+                            },
+                            {
+                                "@id": "http://schema.org/Text",
+                                "@language": "en",
+                                "@type": "http://schema.org/DataType"
+                            },
+                            {
+                                "@id": "http://schema.org/Product",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            }
+                        ],
+                        "http://schema.org/depth": [
+                            {
+                                "@id": "http://schema.org/Distance",
+                                "@language": "en",
+                                "@type": "http://schema.org/Quantity"
+                            },
+                            {
+                                "@id": "http://schema.org/QuantitativeValue",
+                                "@language": "en",
+                                "@type": "http://schema.org/StructuredValue"
+                            }
+                        ],
+                        "http://schema.org/audience": {
+                            "@id": "http://schema.org/Audience",
+                            "@language": "en",
+                            "@type": "http://schema.org/Intangible"
+                        },
+                        "http://schema.org/logo": [
+                            {
+                                "@id": "http://schema.org/URL",
+                                "@language": "en",
+                                "@type": "http://schema.org/Text"
+                            },
+                            {
+                                "@id": "http://schema.org/ImageObject",
+                                "@language": "en",
+                                "@type": "http://schema.org/MediaObject"
+                            }
+                        ],
+                        "http://schema.org/isRelatedTo": [
+                            {
+                                "@id": "http://schema.org/Service",
+                                "@language": "en",
+                                "@type": "http://schema.org/Intangible"
+                            },
+                            {
+                                "@id": "http://schema.org/Product",
+                                "@language": "en",
+                                "@type": "http://schema.org/Thing"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "http://www.w3.org/ns/hydra/core#member": [],
+            "http://www.w3.org/ns/hydra/core#totalItems": 0
+        }
+    ]
+}

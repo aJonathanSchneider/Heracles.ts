@@ -16,6 +16,8 @@ describe("Having a Hydra client", () => {
     beforeEach(
       run(async () => {
         this.apiDocumentation = await this.client.getApiDocumentation(this.url);
+        const entryPoint = await this.apiDocumentation.getEntryPoint();
+        this.entryPoint = entryPoint;
       })
     );
 
@@ -25,7 +27,7 @@ describe("Having a Hydra client", () => {
       });
 
       it("should have access an entry point", () => {
-        expect(this.apiDocumentation.entryPoint).toMatch(".*/api/ysj/hydra/$");
+        expect(this.apiDocumentation.entryPoint).toMatch(".*/api/ysj/hydra$");
       });
 
       it("should provide class of schema:Event as in use case 2.1.api-documentation-data-structures", () => {
