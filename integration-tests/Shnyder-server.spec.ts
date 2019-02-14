@@ -1,186 +1,73 @@
+import HydraClient from "../src/HydraClient";
 import HydraClientFactory from "../src/HydraClientFactory";
-import { hydra, rdf } from "../src/namespaces";
 import { run } from "../testing/AsyncHelper";
 import HydraResourceMatcher from "../testing/HydraResourceMatcher";
 
-describe("Having a Hydra client", () => {
-  beforeEach(() => {
-    jasmine.addMatchers({ toBeLike: () => new HydraResourceMatcher() });
-    this.url = "http://localhost:3001/";
-    this.client = HydraClientFactory.configure()
-      .withDefaults()
-      .andCreate();
-  });
+describe("Having a Hydra client, API documentation and entrypoint", () => {
+  beforeEach(
+    run(async () => {
+      jasmine.addMatchers({ toBeLike: () => new HydraResourceMatcher() });
+      this.url = "http://localhost:3001";
+      const factory: HydraClientFactory = new HydraClientFactory();
+      this.client = factory.withDefaults().andCreate() as HydraClient;
+      const serverURLMap: Map<string, string> = new Map();
+      serverURLMap.set("http://shnyder.com", "http://localhost:3001");
 
-  describe("while browsing the test website", () => {
-    beforeEach(
-      run(async () => {
-        this.apiDocumentation = await this.client.getApiDocumentation(this.url);
-        const entryPoint = await this.apiDocumentation.getEntryPoint();
-        this.entryPoint = entryPoint;
-      })
-    );
-
-    describe("and obtaining it's API documentation as in use case 2.api-documentation", () => {
-      it("should obtain an API documentation", () => {
-        expect(this.apiDocumentation.getEntryPoint).toEqual(jasmine.any(Function));
-      });
-
-      it("should have access an entry point", () => {
-        expect(this.apiDocumentation.entryPoint).toMatch(".*/api/ysj/hydra$");
-      });
-
-      it("should provide class of schema:Event as in use case 2.1.api-documentation-data-structures", () => {
-        expect(this.apiDocumentation.supportedClasses.ofIri("http://schema.org/Event")).toBeLike([
-          {
-            collections: [],
-            description: "An event happening at a certain time and location, such as a concert, lecture, or festival.",
-            displayName: "Event",
-            iri: "http://schema.org/Event",
-            links: [],
-            operations: [],
-            supportedOperations: [],
-            supportedProperties: [
-              {
-                collections: [],
-                iri: "_:b0",
-                links: [],
-                operations: [],
-                property: {
-                  collections: [],
-                  description: "The name of the event.",
-                  displayName: "Name",
-                  iri: "http://schema.org/name",
-                  links: [],
-                  operations: [],
-                  type: [rdf.Property],
-                  valuesOfType: [{ iri: "http://www.w3.org/2001/XMLSchema#string", type: [] }]
-                },
-                readable: false,
-                required: false,
-                type: [hydra.SupportedProperty],
-                writable: false
-              },
-              {
-                collections: [],
-                iri: "_:b1",
-                links: [],
-                operations: [],
-                property: {
-                  collections: [],
-                  description: "Description of the event.",
-                  displayName: "Description",
-                  iri: "http://schema.org/description",
-                  links: [],
-                  operations: [],
-                  type: [rdf.Property],
-                  valuesOfType: [{ iri: "http://www.w3.org/2001/XMLSchema#string", type: [] }]
-                },
-                readable: false,
-                required: false,
-                type: [hydra.SupportedProperty],
-                writable: false
-              },
-              {
-                collections: [],
-                iri: "_:b2",
-                links: [],
-                operations: [],
-                property: {
-                  collections: [],
-                  description: "The start date and time of the item (in ISO 8601 date format).",
-                  displayName: "Start date",
-                  iri: "http://schema.org/startDate",
-                  links: [],
-                  operations: [],
-                  type: [rdf.Property],
-                  valuesOfType: [
-                    { iri: "http://www.w3.org/2001/XMLSchema#dateTime", type: [] },
-                    { iri: "http://www.w3.org/2001/XMLSchema#date", type: [] }
-                  ]
-                },
-                readable: false,
-                required: false,
-                type: [hydra.SupportedProperty],
-                writable: false
-              },
-              {
-                collections: [],
-                iri: "_:b3",
-                links: [],
-                operations: [],
-                property: {
-                  collections: [],
-                  description: "The end date and time of the item (in ISO 8601 date format).",
-                  displayName: "End date",
-                  iri: "http://schema.org/endDate",
-                  links: [],
-                  operations: [],
-                  type: [rdf.Property],
-                  valuesOfType: [
-                    { iri: "http://www.w3.org/2001/XMLSchema#dateTime", type: [] },
-                    { iri: "http://www.w3.org/2001/XMLSchema#date", type: [] }
-                  ]
-                },
-                readable: false,
-                required: false,
-                type: [hydra.SupportedProperty],
-                writable: false
-              }
-            ],
-            type: [hydra.Class]
-          }
-        ]);
-      });
-
-      describe("and generating an API documentation", () => {
-        beforeEach(() => {
-          this.userGuide = { classes: {} };
-          for (const supportedClass of this.apiDocumentation.supportedClasses) {
-            let classDocumentation =
-              `##Class ${supportedClass.displayName} (${supportedClass.iri})\n\n` +
-              `${supportedClass.description}\n\n` +
-              "###Properties:\n\n";
-            for (const supportedProperty of supportedClass.supportedProperties) {
-              classDocumentation +=
-                `####${supportedProperty.property.displayName} (${supportedProperty.property.iri})\n\n` +
-                `${supportedProperty.property.description}\n\n` +
-                "Values of type:\n";
-              for (const valueOfType of supportedProperty.property.valuesOfType) {
-                classDocumentation += `- ${valueOfType.iri}\n`;
-              }
-
-              classDocumentation += "\n\n";
-            }
-
-            this.userGuide.classes[supportedClass.iri] = classDocumentation;
+      this.client.getResource = async (urlOrResource) => {
+        // START getUrl
+        let url: any = urlOrResource;
+        if (typeof url === "object") {
+          url = !!url.target ? url.target.iri : url.iri;
+        }
+        if (!!!url) {
+          throw new Error(HydraClient.noUrlProvided);
+        }
+        // END getUrl
+        serverURLMap.forEach((val, key) => {
+          if ((url as string).startsWith(key)) {
+            url = (url as string).replace(key, val);
           }
         });
+        const response = await fetch(url);
+        if (response.status !== 200) {
+          throw new Error(HydraClient.invalidResponse + response.status);
+        }
+        const hypermediaProcessor = this.client.getHypermediaProcessor(response);
+        if (!hypermediaProcessor) {
+          throw new Error(HydraClient.responseFormatNotSupported);
+        }
+        const result = await hypermediaProcessor.process(response, this.client);
+        Object.defineProperty(result, "iri", {
+          value: response.url
+        });
+        return result;
+      };
+      this.apiDocumentation = await this.client.getApiDocumentation(this.url);
+      const entryPoint = await this.apiDocumentation.getEntryPoint();
+      this.entryPoint = entryPoint;
+    }));
 
-        /*it("should provide all details for the user guide as in use case 2.2.api-documentation-user-document", () => {
-          expect(this.userGuide.classes["http://schema.org/Event"]).toBe(
-            "##Class Event (http://schema.org/Event)\n\n" +
-              "An event happening at a certain time and location, such as a concert, lecture, or festival.\n\n" +
-              "###Properties:\n\n" +
-              "####Name (http://schema.org/name)\n\n" +
-              "The name of the event.\n\n" +
-              "Values of type:\n- http://www.w3.org/2001/XMLSchema#string\n\n\n" +
-              "####Description (http://schema.org/description)\n\n" +
-              "Description of the event.\n\n" +
-              "Values of type:\n- http://www.w3.org/2001/XMLSchema#string\n\n\n" +
-              "####Start date (http://schema.org/startDate)\n\n" +
-              "The start date and time of the item (in ISO 8601 date format).\n\n" +
-              "Values of type:\n" +
-              "- http://www.w3.org/2001/XMLSchema#dateTime\n" +
-              "- http://www.w3.org/2001/XMLSchema#date\n\n\n" +
-              "####End date (http://schema.org/endDate)\n\n" +
-              "The end date and time of the item (in ISO 8601 date format).\n\n" +
-              "Values of type:\n" +
-              "- http://www.w3.org/2001/XMLSchema#dateTime\n" +
-              "- http://www.w3.org/2001/XMLSchema#date\n\n\n"
-          );
-        });*/
-      });
+  describe("while accessing the entry point", () => {
+    it("hypermedia should be in server-domain", () => {
+      expect(this.entryPoint.hypermedia.iri.startsWith("http://shnyder.com")).toBeTruthy();
+    });
+  });
+  describe("two collections are in supportedProperties", () => {
+    it("should be a sub-type of OfferInfoCollection or ProductInfoCollection", () => {
+      const firstCollection = this.entryPoint.hypermedia.collections.first();
+      expect(
+        (firstCollection.type.contains("http://shnyder.com/api/ysj/hydra/ProductInfoCollection"))
+        || (firstCollection.type.contains("http://shnyder.com/api/ysj/hydra/OfferInfoCollection"))
+      ).toBeTruthy();
+    });
+  });
+  describe("two collections are in supportedProperties", () => {
+    it("should return the @id from their domain", () => {
+      const firstCollection = this.entryPoint.hypermedia.collections.first();
+      expect(
+        (firstCollection.iri === "http://shnyder.com/api/ysj/hydra/offerinfos")
+        || (firstCollection.iri === "http://shnyder.com/api/ysj/hydra/productinfos")
+      ).toBeTruthy();
     });
   });
 });
