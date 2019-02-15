@@ -33,7 +33,11 @@ export function linksAndOperations(mappings: {
     required: true,
     type: [hydra.IriTemplateMapping as string]
   };
-
+  mappings[hydra.returns] = {
+    default: returned => new ResourceFilterableCollection(returned),
+    propertyName: "returns",
+    type: [hydra.Operation as string]
+  };
   mappings[hydra.expects] = {
     default: expected => new ResourceFilterableCollection(expected),
     propertyName: "expects",

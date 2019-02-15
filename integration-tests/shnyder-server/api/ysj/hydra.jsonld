@@ -48,7 +48,7 @@
                     }
                 },
                 "http://www.w3.org/ns/hydra/core#title": "members",
-                "http://www.w3.org/ns/hydra/core#supportedOperation": [
+                "http://www.w3.org/ns/hydra/core#operation": [
                     {
                         "@id": "http://shnyder.com/ysj/pools/values/productinfo_delete",
                         "@language": "en",
@@ -155,7 +155,7 @@
                 "@id": "http://shnyder.com/ysj/pools/values/offerinfos_member",
                 "@language": "en",
                 "@type": "http://shnyder.com/api/ysj/hydra/ActionableOfferInfo",
-                "http://www.w3.org/ns/hydra/core#supportedOperation": [
+                "http://www.w3.org/ns/hydra/core#operation": [
                     {
                         "@id": "http://shnyder.com/ysj/pools/values/offerinfo_delete",
                         "@language": "en",
